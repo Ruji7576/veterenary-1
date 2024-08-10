@@ -1,12 +1,21 @@
 import React from 'react';
 import '../css/main.css';
-const PatientForm = ({ handleChange, addPatient, newPatient, isImporting }) => {
+const PatientForm = ({ handleChange, addPatient, newPatient, isImporting, updatePatient, setIsImporting }) => {
     if (!newPatient) {
         return <div></div>;
     }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (isImporting) {
+            updatePatient(newPatient.id, newPatient);
+            setIsImporting(false);
+        } else {
+            addPatient(e);
+        }
+    };
   
     return(
-        <form className="patient-form" onSubmit={addPatient}>
+        <form className="patient-form" onSubmit={handleSubmit}>
         <input name="name"  placeholder="name" onChange={handleChange} value={newPatient.name}/>
         <input name="age"placeholder="age"  onChange={handleChange} value={newPatient.age} />
         <input name="breed" placeholder="breed" onChange={handleChange} value={newPatient.breed}/>
