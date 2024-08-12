@@ -22,7 +22,7 @@ class App extends React.Component {
               } />
               <Route path="/patients/:patientId/appointments" element={
                 <>
-                 <AppointmentForm />
+                <AppointmentForm />
                 <Appointment />
                 </>
                 } />

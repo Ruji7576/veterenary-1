@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import PatientList from './PatientList'
 import PatientForm from './PatientForm';
 import axios from "axios";
-import '../css/list.css'
+import '../css/patient-management-styles.css';
 const Patient =()=> {
     const[patients, setPatients] = useState([]);
     const [isImporting, setIsImporting] = useState(false);
@@ -45,6 +45,23 @@ const Patient =()=> {
     }
     const updatePatient = async (id, newPatient) => {
         await axios.put(`http://localhost:8080/api/patients/${id}`, newPatient);
+        setPatients(prevPatients =>
+            prevPatients.map(patient =>
+                patient.id === id ? { ...patient, ...newPatient } : patient
+            )
+        );
+        setNewPatient({
+            name: '',
+            age: '',
+            breed: '',
+            gender: '',
+            identificationNumber: '',
+            tutorFirstName: '',
+            tutorLastName: '',
+            tutorPhoneNumber: '',
+            treatment: '',
+            profileImage: ''
+        });
     }
 
     const deletePatient = async(id) => {
@@ -73,18 +90,19 @@ const Patient =()=> {
 return (
 <div className="list">
      <h1 className="name-of-list">Patient List </h1>
-            <PatientForm 
-                handleChange={handleChange} 
-                addPatient={addPatient} 
-                newPatient={newPatient}
-                isImporting={isImporting}
-            />
-     <PatientList 
-     patients={patients}
-     deletePatient={deletePatient}
-     newPatient={newPatient}
-        updatePatient={updatePatient}
-        importPatient={importPatient}    
+    <PatientForm 
+    handleChange={handleChange} 
+    addPatient={addPatient} 
+    newPatient={newPatient}
+    isImporting={isImporting}
+    updatePatient={updatePatient}
+    setIsImporting={setIsImporting}
+    />
+    <PatientList 
+    patients={patients}
+    deletePatient={deletePatient}
+    newPatient={newPatient}
+    importPatient={importPatient}    
      />
 </div>);
 };

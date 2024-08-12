@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/main.css';
+import '../css/patient-management-styles.css';
 const PatientForm = ({ handleChange, addPatient, newPatient, isImporting, updatePatient, setIsImporting }) => {
     if (!newPatient) {
         return <div></div>;

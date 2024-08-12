@@ -1,20 +1,20 @@
 import React from "react"
-const AppointmentList = ({appointments}) => {
+import '../css/patient-management-styles.css';
+const AppointmentList = ({appointments, deleteAppointment, importAppointment}) => {
     if (!appointments || appointments.length === 0) {
         return <div>No appointments available.</div>
     }
 return (
-<div>
+<div className="appointment-list">
 <h2>Appointment List</h2>
             {appointments.map(appointment => (
-                <div key={appointment.id}>
-                    <p>{appointment.dateTime}</p>
-                    <p>{appointment.consultationType}</p>
-                    <p>{appointment.reason}</p>
-                    <p>{appointment.status.toString()}</p>
-                    
-            {/* <button onClick={() => deleteAppointment(appointment.id)} type="button">delete</button> */}
-            {/* <button onClick={() => isInportAppointment(appointment)} type="button">update</button>    */}
+                <div key={appointment.id} className="appointment-card">
+                    <p>dateTime: {appointment.dateTime || 'N/A'}</p>
+                    <p>consultationType: {appointment.consultationType || 'N/A'}</p>
+                    <p>reason: {appointment.reason || 'N/A'}</p>
+                    <p>status: {appointment.status ? 'terminated' : 'not terminated'}</p>
+                    <button className="btn btn-delete" onClick={() => deleteAppointment(appointment.id)} type="button">Delete</button>
+                    <button className="btn btn-update" onClick={() => importAppointment(appointment)} type="button">update</button>
         </div>
     ))}
 </div>
