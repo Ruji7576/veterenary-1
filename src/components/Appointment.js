@@ -81,9 +81,19 @@ const Appointment =() => {
         setIsImportAppointment(true);
     };
 
+    const cancelImport = () => {
+        setIsImportAppointment(false);
+        setNewAppointment({
+            dateTime: '',
+            consultationType: '',
+            reason: '',
+            status: false,
+            patient: { id: patientId }
+        });
+      };
+
     return (
     <div className="list">
-        <h1 className="name-of-list">Patient List </h1>
         <AppointmentForm
         setIsImportAppointment={setIsImportAppointment}
         handleChange={handleChange}
@@ -93,6 +103,7 @@ const Appointment =() => {
         setNewAppointment={setNewAppointment}
         addAppointment={addAppointment}
         updateAppointment={updateAppointment}
+        cancelImport={cancelImport}
         />
         <AppointmentList
         appointments={appointments}

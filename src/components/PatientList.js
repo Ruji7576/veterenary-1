@@ -23,8 +23,8 @@ const navigate = useNavigate();
                     <p>Tutor Phone Number: {patient.tutorPhoneNumber || 'N/A'}</p>
                     <p>Treatment: {patient.treatment || 'N/A'}</p>
                     <button className="btn btn-delete" onClick={() => deletePatient(patient.id || Math.random())} type="button">Delete</button>
-                    <button className="btn btn-update" onClick={() => importPatient(patient)} type="button">Update patient</button>
-                    <button className="btn btn-view" onClick={() => navigate(`/patients/${patient.id}/appointments`)} type="button">See all appointments</button>
+                    <button className="btn btn-update" onClick={() => importPatient(patient)} type="button">Change</button>
+                    <button className="btn btn-view" onClick={() => navigate(`/patients/${patient.id}/appointments`)} type="button">Dates</button>
                 </div>
             ))}
             </div>

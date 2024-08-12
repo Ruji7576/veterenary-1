@@ -11,18 +11,16 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <Header title="Anime" />
+          <Header title="Veterinary clinic" />
           <main>
             <Routes>
               <Route path="/" element={
                 <>
-                  <PatientForm />
                   <Patient />
                 </>
               } />
               <Route path="/patients/:patientId/appointments" element={
                 <>
-                <AppointmentForm />
                 <Appointment />
                 </>
                 } />

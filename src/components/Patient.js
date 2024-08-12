@@ -86,10 +86,24 @@ const Patient =()=> {
         setNewPatient(patient);
         setIsImporting(true);
     };
+    const cancelImport = () => {
+        setIsImporting(false);
+        setNewPatient({
+            name: '',
+            age: '',
+            breed: '',
+            gender: '',
+            identificationNumber: '',
+            tutorFirstName: '',
+            tutorLastName: '',
+            tutorPhoneNumber: '',
+            treatment: '',
+            profileImage: ''
+        });
+      };
     
 return (
 <div className="list">
-     <h1 className="name-of-list">Patient List </h1>
     <PatientForm 
     handleChange={handleChange} 
     addPatient={addPatient} 
@@ -97,6 +111,7 @@ return (
     isImporting={isImporting}
     updatePatient={updatePatient}
     setIsImporting={setIsImporting}
+    cancelImport={cancelImport}
     />
     <PatientList 
     patients={patients}
