@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import PatientList from './PatientList'
 import PatientForm from './PatientForm';
 import axios from "axios";
-import '../css/patient-management-styles.css';
 const Patient =()=> {
     const[patients, setPatients] = useState([]);
     const [isImporting, setIsImporting] = useState(false);

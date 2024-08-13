@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/patient-management-styles.css';
 const PatientList = ({ patients, deletePatient, importPatient }) => {
 const navigate = useNavigate();
     if (!patients || patients.length === 0) {

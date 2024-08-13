@@ -3,7 +3,6 @@ import AppointmentForm from './AppointmentForm'
 import { useParams } from "react-router-dom";
 import AppointmentList from './AppointmentList'
 import axios from "axios";
-import '../css/patient-management-styles.css';
 const Appointment =() => {
     const { patientId } = useParams()
     const[appointments, setAppointments] = useState([]);

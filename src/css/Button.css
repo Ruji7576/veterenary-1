@@ -1,0 +1,19 @@
+.btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s;
+    color: white;
+    margin: 5px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-add { background-color: #2ecc71; }
+.btn-update { background-color: #3498db; }
+.btn-cancel, .btn-delete { background-color: #e74c3c; }
+.btn-view { background-color: #2ecc71; }

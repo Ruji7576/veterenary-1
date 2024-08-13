@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import '../css/patient-management-styles.css';
+
 const AppointmentForm = ({addAppointment, handleChange, newAppointment, isImportAppointment, setIsImportAppointment, updateAppointment, cancelImport}) => {
     const [isFormVisible, setIsFormVisible] = useState(false);
     if (!newAppointment) {
@@ -19,10 +19,13 @@ const AppointmentForm = ({addAppointment, handleChange, newAppointment, isImport
         <div>
         <h1 className="patient-list-title">Form</h1>
         <form className="patient-form" onSubmit={handleSubmit}> 
-            <input name="dateTime" type="datetime-local" onChange={handleChange} value={newAppointment.dateTime}></input>
+            <div className="form-group"><input id="dateTime" name="dateTime" type="datetime-local" onChange={handleChange} value={newAppointment.dateTime}/></div>
             <input name="consultationType" type="text" placeholder="Consultation type" onChange={handleChange} value={newAppointment.consultationType}></input>
-            <input name="reason" type="text" placeholder="Reason" onChange={handleChange} value={newAppointment.reason}></input>
+           <input name="reason" type="text" placeholder="Reason" onChange={handleChange} value={newAppointment.reason}></input>
+           <div className='cheack-box'>
             <input name="status" type="checkbox" onChange={handleChange} checked={newAppointment.status || false}></input>
+           <h1 className='cheack-box-text'>Terminated</h1>
+           </div>
             {isImportAppointment ? (
           <>
             <button type="submit" className="btn btn-update">Save Changes</button>

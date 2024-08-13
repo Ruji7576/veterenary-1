@@ -1,0 +1,6 @@
+@media (max-width: 768px) {
+    .patient-form {
+        grid-template-columns: 1fr;
+        max-width: 90%;
+    }
+}
