@@ -98,4 +98,21 @@ The application also includes a page for managing appointments related to each p
 
 - **Delete an Appointment**
   - `DELETE http://localhost:8080/appointments/${id}`
+    
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces. It was used to create the dynamic and responsive UI of the application.
+
+- **Axios**: A promise-based HTTP client for the browser and Node.js. Axios was used for making API requests to the backend services, allowing the application to fetch, update, and delete patient and appointment data.
+
+- **JavaScript (ES6+)**: The primary programming language used for frontend development, leveraging modern features such as arrow functions, async/await, and destructuring.
+
+- **HTML5 & CSS3**: Markup and styling languages used for structuring and designing the UI.
+
+- **Node.js & npm**: Node.js was used for setting up the development environment and npm (Node Package Manager) for managing dependencies.
+
+- **Git**: Version control system used for tracking changes and collaborating on the project.
+
+- **GitHub**: Hosting service for version control that was used to manage and store the project’s codebase.
+
 
