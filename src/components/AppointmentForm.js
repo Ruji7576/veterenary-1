@@ -32,7 +32,7 @@ const AppointmentForm = ({addAppointment, handleChange, newAppointment, isImport
             <button type="button" className="btn btn-cancel" onClick={cancelImport}>Cancel</button>
           </>
         ) : (
-          <button type="submit" className="btn btn-add">Add Patient</button>
+          <button type="submit" className="btn btn-add">Add appointment</button>
         )}
         </form>
         </div>
