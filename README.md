@@ -98,6 +98,3 @@ The application also includes a page for managing appointments related to each p
 - **Delete an Appointment**
   - `DELETE http://localhost:8080/appointments/${id}`
 
-## License
-
-This project is licensed under the MIT License.
