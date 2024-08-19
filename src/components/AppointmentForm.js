@@ -1,8 +1,6 @@
 import React from 'react';
-import { useEffect, useState } from "react";
 
 const AppointmentForm = ({addAppointment, handleChange, newAppointment, isImportAppointment, setIsImportAppointment, updateAppointment, cancelImport}) => {
-    const [isFormVisible, setIsFormVisible] = useState(false);
     if (!newAppointment) {
         return <div></div>;
     }

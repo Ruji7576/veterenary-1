@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import AppointmentForm from './AppointmentForm'
 import { useParams } from "react-router-dom";
 import AppointmentList from './AppointmentList'
+import AppointmentPerfil from "./AppointmentPerfil";
 import axios from "axios";
 const Appointment =() => {
     const { patientId } = useParams()
     const[appointments, setAppointments] = useState([]);
     const[isImportAppointment, setIsImportAppointment] = useState(false);
+    const[appointmentPerfil, setAppointmentPerfil] = useState([]);
     const[newAppointment, setNewAppointment] = useState({
     dateTime: '',
     consultationType: '',
@@ -27,6 +29,21 @@ const Appointment =() => {
         };
 
         getAllAppointments();
+    }, [patientId]);
+
+    useEffect(() => {
+        if (!patientId) return;
+
+        const getAppointment = async () => {
+            try {
+                const response = await axios.get(`http://localhost:8080/appointments/appointment/${patientId}`);
+                setAppointmentPerfil(response.data);
+            } catch (error) {
+                console.error("Failed to fetch appointments", error);
+            }
+        };
+
+        getAppointment();
     }, [patientId]);
 
     const handleChange = (e) => {
@@ -93,6 +110,9 @@ const Appointment =() => {
 
     return (
     <div className="list">
+        <AppointmentPerfil
+        appointmentPerfil={appointmentPerfil}
+        />
         <AppointmentForm
         setIsImportAppointment={setIsImportAppointment}
         handleChange={handleChange}
