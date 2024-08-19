@@ -63,7 +63,8 @@ The application also includes a page for managing appointments related to each p
 
 #### Screenshot
 
-- ![Second Page - Appointments View](https://github.com/Ruji7576/veterenary-1/blob/main/src/Examples/Second_Page.jpg?raw=true)
+- ![Second Page - Appointments View](https://github.com/Ruji7576/veterenary-1/blob/main/src/Examples/Second_Page_1.jpg?raw=true)
+- ![Second Page - Appointments View](https://github.com/Ruji7576/veterenary-1/blob/main/src/Examples/Second_Page_2.jpg?raw=true)
 
 ## API Endpoints
 
