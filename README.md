@@ -88,7 +88,7 @@ The application also includes a page for managing appointments related to each p
   - `GET http://localhost:8080/appointments/${patientId}`
 
 - **Get a Specific Appointment**
-  - `GET http://localhost:8080/appointments/appointment/${patientId}`
+  - `GET http://localhost:8080/api/patients/patients/${patientId}`
 
 - **Add an Appointment**
   - `POST http://localhost:8080/appointments`
