@@ -36,7 +36,7 @@ const Appointment =() => {
 
         const getAppointment = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/appointments/appointment/${patientId}`);
+                const response = await axios.get(`http://localhost:8080/api/patients/patients/${patientId}`);
                 setAppointmentPerfil(response.data);
             } catch (error) {
                 console.error("Failed to fetch appointments", error);
